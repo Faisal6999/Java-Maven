@@ -11,7 +11,7 @@ pipeline {
         ARTIFACT_NAME = "spring-boot-rest-services-0.0.1-SNAPSHOT.jar"
         AWS_EB_APP_NAME = "MuhannadSinan-Belt2D2-EB"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT = "Muhannadsinanbelt2d2eb-env-2"
+        AWS_EB_ENVIRONMENT = "MuhannadSinanBelt2D2-env"
 
         SONAR_PROJECT_KEY = "onsite-Muhannad_Sinan-B2D2"
         SONAR_IP = "52.23.193.18"
