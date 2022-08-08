@@ -8,7 +8,7 @@ pipeline {
 
         AWS_S3_BUCKET = "muhannadsinan-belt2d2-artifacts-2022"
         ARTIFACT_NAME = "spring-boot-rest-services-0.0.1-SNAPSHOT.jar"
-        AWS_EB_APP_NAME = "java-webapp"
+        AWS_EB_APP_NAME = "MuhannadSinan-Belt2D2-EB"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "Muhannadsinanbelt2d2eb-env-1"
 
