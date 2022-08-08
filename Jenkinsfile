@@ -12,8 +12,8 @@ pipeline {
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "Muhannadsinanbelt2d2eb-env-1"
 
-        SONAR_IP = "172.17.0.3:80"
-        SONAR_TOKEN = "sqp_e64fb0f78b36fa47e522af7e29b036f106893ccb"
+        SONAR_IP = "52.23.193.18"
+        SONAR_TOKEN = "sqp_372a3a6d9996be621fed718e863db09228e4d344"
 
     }
 
