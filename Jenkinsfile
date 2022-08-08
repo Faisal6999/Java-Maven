@@ -7,10 +7,11 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('MuhannadSinan-aws-secret-access-key')
 
         AWS_S3_BUCKET = "muhannadsinan-belt2d2-artifacts-2022"
+        AWS_REGION = "me-south-1"
         ARTIFACT_NAME = "spring-boot-rest-services-0.0.1-SNAPSHOT.jar"
         AWS_EB_APP_NAME = "MuhannadSinan-Belt2D2-EB"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT = "Muhannadsinanbelt2d2eb-env-1"
+        AWS_EB_ENVIRONMENT = "Muhannadsinanbelt2d2eb-env"
 
         SONAR_IP = "52.23.193.18"
         SONAR_TOKEN = "sqp_372a3a6d9996be621fed718e863db09228e4d344"
@@ -82,7 +83,7 @@ pipeline {
         stage('Publish artefacts to S3 Bucket') {
             steps {
 
-                sh "aws configure set region me-south-1"
+                sh "aws configure set region $AWS_REGION"
 
                 sh "aws s3 cp ./target/**.jar s3://$AWS_S3_BUCKET/$ARTIFACT_NAME"
                 
