@@ -11,8 +11,9 @@ pipeline {
         ARTIFACT_NAME = "spring-boot-rest-services-0.0.1-SNAPSHOT.jar"
         AWS_EB_APP_NAME = "MuhannadSinan-Belt2D2-EB"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT = "Muhannadsinanbelt2d2eb-env-1"
+        AWS_EB_ENVIRONMENT = "Muhannadsinanbelt2d2eb-env-2"
 
+        SONAR_PROJECT_KEY = "onsite-Muhannad_Sinan-B2D2"
         SONAR_IP = "52.23.193.18"
         SONAR_TOKEN = "sqp_372a3a6d9996be621fed718e863db09228e4d344"
 
@@ -56,7 +57,7 @@ pipeline {
                 sh '''
 
                 mvn clean verify sonar:sonar \
-                    -Dsonar.projectKey=onsite-Muhannad_Sinan-B2D2 \
+                    -Dsonar.projectKey=$SONAR_PROJECT_KEY \
                     -Dsonar.host.url=http://$SONAR_IP \
                     -Dsonar.login=$SONAR_TOKEN
 
