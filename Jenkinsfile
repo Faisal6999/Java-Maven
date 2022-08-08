@@ -7,7 +7,7 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('MuhannadSinan-aws-secret-access-key')
 
         AWS_S3_BUCKET = "muhannadsinan-belt2d2-artifacts-2022"
-        ARTIFACT_NAME = "hello-world.war"
+        ARTIFACT_NAME = "spring-boot-rest-services-0.0.1-SNAPSHOT.jar"
         AWS_EB_APP_NAME = "java-webapp"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "Muhannadsinanbelt2d2eb-env-1"
