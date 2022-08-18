@@ -11,7 +11,7 @@ pipeline {
         ARTIFACT_NAME         = "hello-world.war"
         AWS_EB_APP_NAME       = "java-webapp"
         AWS_EB_APP_VERSION    = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT    = "Javawebapp-env"
+        AWS_EB_ENVIRONMENT    = "Javawebapp-env-1"
 
         SONAR_PROJECT_KEY     = "Java-Maven-Application"
         SONAR_IP              = "15.185.224.95"
