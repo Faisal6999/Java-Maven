@@ -6,16 +6,16 @@ pipeline {
         AWS_ACCESS_KEY_ID     = credentials('MuhanadSinan-aws-secret-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('MuhannadSinan-aws-secret-access-key')
 
-        AWS_S3_BUCKET         = "muhannadsinan-belt2d2-artifacts-2022"
+        AWS_S3_BUCKET         = "artefact-bucket-repo"
         AWS_REGION            = "me-south-1"
-        ARTIFACT_NAME         = "spring-boot-rest-services-0.0.1-SNAPSHOT.jar"
-        AWS_EB_APP_NAME       = "MuhannadSinan-Belt2D2-EB"
+        ARTIFACT_NAME         = "hello-world.war"
+        AWS_EB_APP_NAME       = "java-webapp"
         AWS_EB_APP_VERSION    = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT    = "MuhannadSinanBelt2D2-env"
+        AWS_EB_ENVIRONMENT    = "Javawebapp-env"
 
-        SONAR_PROJECT_KEY     = "onsite-Muhannad_Sinan-B2D2"
-        SONAR_IP              = "52.23.193.18"
-        SONAR_TOKEN           = "sqp_372a3a6d9996be621fed718e863db09228e4d344"
+        SONAR_PROJECT_KEY     = "Java-Maven-Application"
+        SONAR_IP              = "15.185.224.95"
+        SONAR_TOKEN           = "sqp_e3bd488d35e2c30fd376c40280aba83a5f217f34"
 
     }
 
@@ -63,7 +63,7 @@ pipeline {
 
             post {
                 success {
-                    archiveArtifacts artifacts: '**/target/**.jar', followSymlinks: false                   
+                    archiveArtifacts artifacts: '**/target/**.war', followSymlinks: false                   
                 }
             }
         }
@@ -71,7 +71,7 @@ pipeline {
         stage('Publish artefacts to S3 Bucket') {
             steps {
                 sh "aws configure set region $AWS_REGION"
-                sh "aws s3 cp ./target/**.jar s3://$AWS_S3_BUCKET/$ARTIFACT_NAME"                
+                sh "aws s3 cp ./target/**.war s3://$AWS_S3_BUCKET/$ARTIFACT_NAME"                
             }
         }
 
